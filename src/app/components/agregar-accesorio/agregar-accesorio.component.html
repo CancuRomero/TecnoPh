@@ -1,0 +1,112 @@
+<div class="contain">
+    <!--------------- Inicio Nav -------------------->
+    <nav class="navbar navbar-expand-md navbar-dark bg-black" id="barra">
+        <div class="container-fluid">
+        <!-- icono o nombre -->
+            <a class="navbar-brand" href="#">
+            <img src="/assets/img/Logo.png" alt="" width="300" height="100">
+            </a>
+            
+        <!-- boton del menu -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- elementos del menu colapsable -->
+
+            <div class="collapse navbar-collapse " id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/phone">
+                            <div class="logo-container">
+                                <img src="/assets/img/iconIphone.png" alt="">
+                                <p class="logo-title">IPHONES</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/accesorio">
+                            <div class="logo-container">
+                                <img src="/assets/img/icon-accs.png" alt="">
+                                <p class="logo-title">ACCESORIOS</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/macbook">
+                            <div class="logo-container">
+                                <img src="/assets/img/mac4.png" alt="">
+                                <p class="logo-title">iPad y MacBook</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr class="d-md-none text-white-50">
+
+                
+                <!--boton Informacion -->
+
+                <a><i class="fab fa-apple apple-icon"></i></a>
+            </div>
+        </div>  
+    </nav>
+  <!--------------- Fin Nav -------------------->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <span class="titulo text-center">{{ titulo | uppercase}}</span>
+                        </div> 
+                        <form class="mt-3" [formGroup]="accesorioForm" (ngSubmit)="agregarAccesorio()">
+                            <div class="mb-3">
+                                <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="Nombre">
+                                <div class="text-danger" *ngIf="accesorioForm.get('nombre')?.hasError('required') && accesorioForm.get('nombre')?.touched">
+                                    <span>El nombre <strong>es obligatorio</strong></span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" formControlName="descripcion" class="form-control form-control-lg" placeholder="Descripcion">
+                                <div class="text-danger" *ngIf="accesorioForm.get('descripcion')?.hasError('required') && accesorioForm.get('descripcion')?.touched">
+                                    <span>La descripcion <strong>es obligatoria</strong></span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" formControlName="precio" class="form-control form-control-lg" placeholder="Precio">
+                                <div class="text-danger" *ngIf="accesorioForm.get('precio')?.hasError('required') && accesorioForm.get('precio')?.touched">
+                                    <span>El precio <strong>es obligatorio</strong></span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <!-- Input para la imagen principal -->
+                                <input type="file" class="d-none" (change)="onMainPhotoSelected($event)" #mainPhotoInput>
+                                <div *ngIf="photoSelect">
+                                    <img [src]="photoSelect" class="img-fluid mb-2" alt="Imagen Principal" (click)="mainPhotoInput.click()" width="100" height="100">
+                                </div>
+                                <button type="button" class="btn btn-primary btn-sm" (click)="mainPhotoInput.click()">Seleccionar Imagen Principal</button>
+    
+                                <!-- Sección existente para imágenes secundarias, sin cambios -->
+                                <input type="file" name="imagePaths" multiple class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+                                <div class="d-flex flex-row flex-wrap">
+                                    <div *ngFor="let photo of photosSelected; let i = index">
+                                        <img [src]="photo" class="img-fluid mb-2 mt-2" alt="Imagen seleccionada {{i + 1}}" (click)="photoInput.click()" width="50" height="50">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-sm" (click)="photoInput.click()">Seleccionar Fotos Secundarias</button>
+    
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-secondary btn-lg float-start" routerLink="/accesorio">VOLVER</button>
+                                <button class="btn btn-lg float-end" id="boton" type="submit" [disabled]="accesorioForm.invalid">ACEPTAR</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

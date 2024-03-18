@@ -1,0 +1,135 @@
+<div class="row">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top" id="barra">
+         <div class="container-fluid">
+         <!-- icono o nombre -->
+             <a class="navbar-brand" href="#">
+             <img src="/assets/img/Logo.png" alt="" width="300" height="100">
+             </a>
+             
+         <!-- boton del menu -->
+ 
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+ 
+             <!-- elementos del menu colapsable -->
+ 
+             <div class="collapse navbar-collapse " id="menu">
+                 <ul class="navbar-nav mx-auto">
+                     <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="/iPhoneNuevos">
+                             <div class="logo-container">
+                                 <img src="/assets/img/iconIphone.png" alt="">
+                                 <p class="logo-title">Iphones Nuevos</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="/iPhoneUsados">
+                             <div class="logo-container">
+                                 <img src="/assets/img/iconIphone.png" alt="">
+                                 <p class="logo-title">Iphones Usados</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="/list-accesorios">
+                             <div class="logo-container">
+                                 <img src="/assets/img/icon-accs.png" alt="">
+                                 <p class="logo-title">Accesorios</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/list-MacBook">
+                            <div class="logo-container">
+                                <img src="/assets/img/mac4.png" alt="">
+                                <p class="logo-title">iPad y MacBook</p>
+                            </div>
+                        </a>
+                    </li>
+                 </ul>
+ 
+                 
+ 
+                 
+                 <!--boton Informacion -->
+ 
+                 
+             </div>
+         </div>  
+     </nav>    
+ 
+ 
+       <!-- Scripts de Bootstrap (jQuery y Popper.js son necesarios para el funcionamiento de los componentes de Bootstrap) -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+       
+     
+       <div class=" text-center bg-body-tertiary">
+         <div id="carusel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+           <div class="carousel-inner">
+             <div class="carousel-item active">
+               <img src="/assets/img/MACBOOK-CA.svg" class="d-block w-100" alt="...">
+             </div>
+             <div class="carousel-item ">
+                <img src="/assets/img/REDES-CA.svg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/assets/img/ENVIOS.svg" class="d-block w-100" alt="...">
+              </div>
+           </div>
+         </div>
+       </div>
+ 
+ 
+     
+     <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <form class="align-items-center mb-4 mt-4">
+                    <div class="input-group">
+                        <input class="form-control custom-input" type="text" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="search" (input)="buscar()">
+                        <button class="btn custom-btn" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+                
+                <h1 class="main-title animated">IPAD Y MACBOOK</h1>
+                <div class="line"></div>
+            </div>
+        </div>
+         <div class="row justify-content-center">
+             <div class="col-lg-7">
+                 <div class="col">
+                     <div class="row" id="ads">
+                         
+                          <!-- Nuevo contenedor para las tarjetas -->
+                         <!-- Category Cards -->
+                            <div class="col-lg-4 mb-4" *ngFor="let macbook of macbooks">
+                                <div class="card">
+                                    <a [routerLink]="['/detalles-macbooks/', macbook._id]" style="text-decoration: none;">
+                                        <div class="card-image card-hover">
+                                            <img [src]="'https://backtecnophones-production.up.railway.app/' + macbook.imagenPrincipal " alt="" class="img-card-top">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title text-uppercase font-weight-bold custom-font-model">{{macbook.modelo}}</h5>
+                                            <h3 class="card-price font-weight-bold custom-font" style="color: #0d53d4">$USD {{macbook.precio | number:'1.2-2' }}</h3>
+                                        </div>
+                                        <div class="mt-auto">
+                                            <div class="card-footer  text-center " style="color: rgb(61, 141, 81);"><i class="fas fa-truck"></i> Envíos a todo el país</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>   
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     
+
+ 
+ <app-footer></app-footer>

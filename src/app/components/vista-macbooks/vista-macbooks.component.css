@@ -1,0 +1,275 @@
+
+
+
+body {
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    
+}
+.header {
+    background-color: #18181b;
+    text-align: center;
+}
+
+.header img {
+    max-width: 100%;
+    height: 120px;
+}
+/* Category Ads */
+
+#tarjeta {
+    margin: 20px;
+    
+}
+
+#ads {
+    margin: 30px 0 30px 0;
+    border: 1px solid #aa7831; /* Color y grosor del borde */
+    border-radius: 10px; /* Radio de los bordes */
+    padding: 10px; /* Espacio interno para separar las tarjetas del borde */
+   
+}
+
+#filtros a {
+    color: #000;
+}
+
+#ads .card-notify-year {
+        position: absolute;
+        right: -10px;
+        top: -20px;
+        background: #ff4444;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;      
+        font-size: 14px;      
+        width: 50px;
+        height: 50px;    
+        padding: 15px 0 0 0;
+}
+
+
+#ads .card-detail-badge {      
+        background: #aa7831;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px;
+        color: #000;
+        padding: 5px 10px;
+        font-size: 14px;        
+    }
+
+   
+
+#ads .card:hover {
+            background: #fff;
+            box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+#ads .card-image-overlay {
+        font-size: 20px;
+        
+    }
+
+
+#ads .card-image-overlay span {
+            display: inline-block;              
+        }
+
+
+
+
+
+#ads .ad-title h5 {
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+
+
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+    
+.logo-title {
+     margin-top: 5px; /* Puedes ajustar el margen según sea necesario */
+}
+
+
+#barra {
+    padding: 0;
+    background-color: #000000;
+}
+
+#buscador {
+    margin-bottom: 10px;
+}
+
+
+.custom-form {
+    
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 15px 25px; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo personalizado para el campo de entrada */
+.custom-input {
+    background-color: #f8f9fa; /* Color de fondo gris claro */
+    border: none; /* Borde transparente */
+    outline: none; /* Sin contorno al hacer clic */
+    box-shadow: none; /* Sin sombra */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    width: 70%; /* Ancho del campo de entrada */
+}
+
+/* Estilo personalizado para el botón */
+.custom-btn {
+    background-color: #aa7831; /* Color de fondo azul */
+    border: none; /* Borde transparente */
+    color: #ffffff; /* Color de texto blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px 25px; /* Espaciado interno */
+    transition: background-color 0.3s ease; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilo personalizado para cambiar el color del botón al pasar el ratón */
+.custom-btn:hover {
+    background-color: #fff8b4; /* Color de fondo azul oscuro */
+}
+
+
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.card-overlay .badge {
+    margin-right: 5px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+
+.card-hover {
+    transition: transform 0.3s;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+}
+
+.card-hover:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.capacity, .battery {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.card-hover:hover .card-overlay {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+
+.custom-font {
+    font-family: 'inherit', sans-serif; /* Reemplaza 'TuTipoDeFuente' con el nombre de tu tipo de fuente deseado */
+}
+
+
+.custom-font-model {
+    font-family: 'inherit', sans-serif; /* Reemplaza 'OtroTipoDeFuente' con el nombre de tu otro tipo de fuente deseado para el modelo */
+}
+
+
+.main-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(50px); /* Empieza ligeramente desplazado hacia abajo */
+    animation: fadeInUp 1s ease forwards; /* Animación de entrada */
+}
+
+.line {
+    width: 100px;
+    height: 3px;
+    background-color: #aa7831;
+    margin: 0 auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Se desplaza hacia arriba a su posición final */
+    }
+}

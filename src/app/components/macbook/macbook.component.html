@@ -1,0 +1,96 @@
+<div class="contain">
+    <!--------------- Inicio Nav -------------------->
+    <nav class="navbar navbar-expand-md navbar-dark bg-black" id="barra">
+      <div class="container-fluid">
+      <!-- icono o nombre -->
+          <a class="navbar-brand" href="#">
+          <img src="/assets/img/Logo.png" alt="" width="300" height="100">
+          </a>
+          
+      <!-- boton del menu -->
+  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- elementos del menu colapsable -->
+  
+          <div class="collapse navbar-collapse " id="menu">
+              <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" routerLink="/phone">
+                          <div class="logo-container">
+                              <img src="/assets/img/iconIphone.png" alt="">
+                              <p class="logo-title">IPHONES</p>
+                          </div>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" routerLink="/accesorio">
+                          <div class="logo-container">
+                              <img src="/assets/img/icon-accs.png" alt="">
+                              <p class="logo-title">ACCESORIOS</p>
+                          </div>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" routerLink="/macbook">
+                          <div class="logo-container">
+                              <img src="/assets/img/mac4.png" alt="">
+                              <p class="logo-title">iPad y MacBook</p>
+                          </div>
+                      </a>
+                  </li>
+              </ul>
+  
+              <hr class="d-md-none text-white-50">
+  
+              
+              <!--boton Informacion -->
+  
+              <a><i class="fab fa-apple apple-icon"></i></a>
+          </div>
+      </div>  
+    </nav>
+    <!--------------- Fin Nav -------------------->
+    <div class="container mt-5">
+      <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+              <div class="card">
+                  <div class="card-body text-center">
+                    <span class="titulo">LISTADO DE IPAD Y MACBOOKS</span>
+                    <button class="btn float-end me-3" routerLink="/agregar-macbook">AGREGAR</button>
+                    <table *ngIf="listMacbooks.length > 0" class="table table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Caracteristicas</th>
+                            <th scope="col">Memoria</th>
+                            <th scope="col">Almacenamiento</th>
+                            <th scope="col">Visible</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let macbook of listMacbooks">
+                            <td>{{ macbook.modelo }}</td>
+                            <td>{{ macbook.caracteristicas }}</td>
+                            <td>%{{ macbook.memoria}}</td>
+                            <td>{{ macbook.almacenamiento}} GB</td>
+                            <td>{{ macbook.visible}}</td>
+                            <td>$USD{{ macbook.precio | number:'1.2-2'}}</td>
+                            <td>
+                                <i [routerLink]="['/editar-macbook', macbook._id]" class="fas fa-solid fa-pen-to-square text-primary"></i>
+                                <i (click)="eliminarMacbook(macbook._id)" class="fas fa-solid fa-trash text-danger"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <h5 style="text-align: start; margin-top: 10px;" *ngIf="listMacbooks.length == 0">No hay dispositivos para mostrar</h5>                    
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>

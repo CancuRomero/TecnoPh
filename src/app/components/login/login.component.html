@@ -1,0 +1,35 @@
+<!-- HEADER -->
+<div class="header">
+  <a class="navbar-brand" href="#">
+    <img src="assets/img/Logo.png" alt="LOGO">
+  </a>
+</div>
+
+<!-- lOGIN -->
+<div class="d-flex align-items-center py-4 bg-body-tertiary" id="body">
+    <main class="form-signin w-100 m-auto">
+    <form [formGroup]="userForm" (submit)="submit()">
+        <img class="mb-4" src="/assets/img/owlSync.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+
+        <div class="form-floating">
+            <input formControlName="username" type="text" class="form-control" placeholder="Usuario">
+            <label for="username">Usuario</label>
+        </div>
+        <div class="form-floating">
+            <input formControlName="password" type="password" class="form-control" placeholder="Password">
+            <label for="password">Password</label>
+        </div>
+
+        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+        
+    </form>
+    </main>
+</div>
+ 
+
+
+
+
+
+
